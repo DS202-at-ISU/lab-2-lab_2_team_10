@@ -27,7 +27,7 @@ library(tidyverse)
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+    ## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
     ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
     ## ✔ purrr     1.1.0     
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -120,6 +120,78 @@ summary(ames)
     ##                     (19) Res: North Ridge Hei: 420  
     ##                     (Other)                  :3622
 
+``` r
+?ames
+```
+
+    ## starting httpd help server ... done
+
+There are 14 variables in this data set.
+
+There is the house’s “Style”, how the house looks, which is a
+categorical factor type of data. In “Style” there are 6 options,
+detailing if the house is one or two story and other aspects of its
+design. There is an other option as well.
+
+There is “Occupancy” which is the intended use which is categorical
+factor data type as well. There are 5 unique values with Condominium,
+Single-Family, Townhouse, Two-Family Conversion, and Two-Family Duplex.
+
+There is “Sales Date” which is the date that the house sold and is a
+date data type. It ranges from July 3rd, 2017 to August 31st, 2022.
+
+“Sale Price” is the price at which the house is sold in US Dollars and
+is a numerical data type. The range is 20.5 million with a minimum house
+sale price of 0 (likely never sold the house) and a maximum of
+20,500,000. 20,500,000 is an outlier and the interquartile range is
+119,100 between 170,900 to 280,000.
+
+“MultiSale” is a logical data type with NA (Not a MultiSale) and Y (Yes
+a Multisale) as the two unique values. It measures whether or not a
+house was sold in a “package” likely alongside another house.
+
+“YearBuilt” is an integer variable and numerical data type. This
+measures the year that the house was built. The years built ranges 66
+years between 1956 to 2022. Some have a 0 or are NA. They likely did not
+record this data.
+
+“Acres” is a numerical data type and measures the number of acres of the
+lot the house is on. The interquartile range is 0.1268 acres between
+0.1502 and 0.2770 with a minimum of 0 and a maximum of 12.0120. The
+houses with 0 acres are only the buildings and do not include the land
+it is attached to.
+
+“Total Living Area” is a numerical data type and the total square
+footage of a house’s living area, in other words, the inside of the
+house. The interquartile range is 697 square feet between 1095 and 1792
+with a minimum of 0 and maximum of 6007. Those houses with 0 sf of total
+living area likely do not have any buildings and is just the selling of
+an empty plot of land.
+
+“Bedrooms” is a numerical data type showing the number of bedrooms in a
+house. It has a range of 10 bedrooms from 0 to 10.
+
+“FinishedBsmtArea” is a numerical data type showing the total square
+footage of a house’s basement area. It has a range of 6,486 square feet
+from 10 to 6,496. It is important to note that no houses are marked as
+zero. Either every house has a basement or those without basements are
+marked NA.
+
+“Lot Area” is a numerical data type showing the total square footage of
+a house’s entire lot. It has an interquartile range of 5,535 square feet
+from 6,553 to 12,088 with a minimum of 0 (same reasoning as for the 0s
+in “Acres”) and a maximum of 523,228.
+
+“AC” is a logical data type with “Yes” and “No” meaning a house has AC
+or does not respectively.
+
+“FirePlace” is a logical data type with “Yes” and “No” meaning a house
+has a Fire Place or does not respectively.
+
+“Neighborhood” is a categorical data type describing the location of the
+house in Ames based on the neighborhood it is in. There are about 42
+unique values.
+
 # Step 2 Result
 
 Price is the variable of interest since it is the output that we want to
@@ -175,3 +247,21 @@ Is there anything odd?
 High concentration near 0 because many of the houses haven’t been sold.
 
 # Step 4 Result
+
+Alexander:
+
+“Bedrooms” is my variable of choice as I believe the number of bedrooms
+will directly influence the final sale price of the house. “Bedrooms”
+has a range of 10 bedrooms between 0 and 10 with an interquartile range
+of 1 between 3 and 4 bedrooms.
+
+``` r
+ames |>
+  ggplot(aes(x = Bedrooms)) +
+  geom_histogram(bins = 10)
+```
+
+    ## Warning: Removed 447 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
