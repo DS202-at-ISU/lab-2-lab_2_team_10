@@ -218,3 +218,24 @@ ames |>
     ## (`stat_bin()`).
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+ames |>
+  filter(`Sale Price` != 0) |>
+  group_by(Bedrooms) |>
+  summarize(Mean_price = mean(`Sale Price`, na.rm = TRUE)) |>
+  ggplot(aes(x = Bedrooms, y = Mean_price)) +
+  geom_bar(stat = 'identity')
+```
+
+    ## Warning: Removed 1 row containing missing values or values outside the scale range
+    ## (`geom_bar()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> This bar
+chart shows how for each number of bedrooms what the average price of
+the house is. Houses with only 1 bedroom seem to have a significantly
+higher house price. One would assume that as the number of bedrooms
+increase the price of the house will increase, however this is not the
+case. It may be important to look at total square footage to get a more
+accurate look into how price is affected. I also filtered out houses
+that did not sale and the result was still the same.
