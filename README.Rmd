@@ -23,8 +23,12 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 ```{r}
 library(classdata)
 library(tidyverse)
-
+head(ames)
 ```
+```{r}
+str(ames)
+```
+
 
 # Step 2 Result
 
