@@ -279,7 +279,6 @@ ames |>
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-<<<<<<< HEAD
 ![](README_files/figure-gfm/Bedrooms%20Histogram-1.png)<!-- -->
 
 ``` r
@@ -294,15 +293,8 @@ ames |>
     ## Warning: Removed 1 row containing missing values or values outside the scale range
     ## (`geom_bar()`).
 
-![](README_files/figure-gfm/Price%20by%20Bedrooms-1.png)<!-- --> This
-bar chart shows how for each number of bedrooms what the average price
-of the house is. Houses with only 1 bedroom seem to have a significantly
-higher house price. One would assume that as the number of bedrooms
-increase the price of the house will increase, however this is not the
-case. It may be important to look at total square footage to get a more
-accurate look into how price is affected. I also filtered out houses
-that did not sell and the result was still the same. =======
-\>\>\>\>\>\>\> 4c40b7a202ef77252e172c54145199ab32b043ff
-=======
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
->>>>>>> 1c4751759fab998f19fa5e326556df1feef4431f
+![](README_files/figure-gfm/Price%20by%20Bedrooms-1.png)<!-- -->
+
+# This bar chart shows how for each number of bedrooms what the average price of the house is. Houses with only 1 bedroom seem to have a significantly higher house price. One would assume that as the number of bedrooms increase the price of the house will increase, however this is not the case. It may be important to look at total square footage to get a more accurate look into how price is affected. I also filtered out houses that did not sell and the result was still the same.
+
+> > > > > > > 4c40b7a202ef77252e172c54145199ab32b043ff
