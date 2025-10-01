@@ -66,6 +66,8 @@ There is "Sales Date" which is the date that the house sold and is a date data t
 
 
 # Step 2 Result
+Price is the variable of interest since it is the output that we want to predict or model based on the other factors
+
 
 # Step 3 Result
 
