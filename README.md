@@ -211,12 +211,6 @@ range(ames$`Sale Price`, na.rm = TRUE)
 
     ## [1]        0 20500000
 
-``` r
-sum(ames$`Sale Price` == 0)
-```
-
-    ## [1] 2206
-
 Draw a histogram for a numeric variable or a bar chart, if the variable
 is categorical.
 
@@ -246,7 +240,24 @@ Is there anything odd?
 
 High concentration near 0 because many of the houses haven’t been sold.
 
+``` r
+sum(ames$`Sale Price` == 0)
+```
+
+    ## [1] 2206
+
 # Step 4 Result
+
+Henry:
+
+``` r
+ames |>
+  filter(`Sale Price` != 0, Style != "1 Story Frame", Occupancy != "Condominium") |>
+  ggplot(aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 Alexander:
 
@@ -264,4 +275,4 @@ ames |>
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
