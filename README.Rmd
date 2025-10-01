@@ -4,19 +4,17 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit the README.Rmd file -->
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Lab report #1
 
-Follow the instructions posted at https://ds202-at-isu.github.io/labs.html for the lab assignment. The work is meant to be finished during the lab time, but you have time until Monday evening to polish things.
+Follow the instructions posted at <https://ds202-at-isu.github.io/labs.html> for the lab assignment. The work is meant to be finished during the lab time, but you have time until Monday evening to polish things.
 
-Include your answers in this document (Rmd file). Make sure that it knits properly (into the md file). Upload both the Rmd and the md file to your repository.  
+Include your answers in this document (Rmd file). Make sure that it knits properly (into the md file). Upload both the Rmd and the md file to your repository.
 
-All submissions to the github repo will be automatically uploaded for grading once the due date is passed.
-Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
+All submissions to the github repo will be automatically uploaded for grading once the due date is passed. Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
 
 # Step 1 Result
 
@@ -37,9 +35,10 @@ summary(ames)
 ```{r}
 ?ames
 ```
+
 There are 14 variables in this data set.
 
-There is the house's "Style", how the house looks, which is a categorical factor type of data. In "Style" there are 6 options, detailing if the house is one or two story and other aspects of its design. There is an other option as well. 
+There is the house's "Style", how the house looks, which is a categorical factor type of data. In "Style" there are 6 options, detailing if the house is one or two story and other aspects of its design. There is an other option as well.
 
 There is "Occupancy" which is the intended use which is categorical factor data type as well. There are 5 unique values with Condominium, Single-Family, Townhouse, Two-Family Conversion, and Two-Family Duplex.
 
@@ -51,11 +50,11 @@ There is "Sales Date" which is the date that the house sold and is a date data t
 
 "YearBuilt" is an integer variable and numerical data type. This measures the year that the house was built. The years built ranges 66 years between 1956 to 2022. Some have a 0 or are NA. They likely did not record this data.
 
-"Acres" is a numerical data type and measures the number of acres of the lot the house is on. The interquartile range is 0.1268 acres between 0.1502 and 0.2770 with a minimum of 0 and a maximum of 12.0120. The houses with 0 acres are only the buildings and do not include the land it is attached to. 
+"Acres" is a numerical data type and measures the number of acres of the lot the house is on. The interquartile range is 0.1268 acres between 0.1502 and 0.2770 with a minimum of 0 and a maximum of 12.0120. The houses with 0 acres are only the buildings and do not include the land it is attached to.
 
 "Total Living Area" is a numerical data type and the total square footage of a house's living area, in other words, the inside of the house. The interquartile range is 697 square feet between 1095 and 1792 with a minimum of 0 and maximum of 6007. Those houses with 0 sf of total living area likely do not have any buildings and is just the selling of an empty plot of land.
 
-"Bedrooms" is a numerical data type showing the number of bedrooms in a house. It has a range of 10 bedrooms from 0 to 10. 
+"Bedrooms" is a numerical data type showing the number of bedrooms in a house. It has a range of 10 bedrooms from 0 to 10.
 
 "FinishedBsmtArea" is a numerical data type showing the total square footage of a house's basement area. It has a range of 6,486 square feet from 10 to 6,496. It is important to note that no houses are marked as zero. Either every house has a basement or those without basements are marked NA.
 
@@ -67,20 +66,20 @@ There is "Sales Date" which is the date that the house sold and is a date data t
 
 "Neighborhood" is a categorical data type describing the location of the house in Ames based on the neighborhood it is in. There are about 42 unique values.
 
-
 # Step 2 Result
+
 Price is the variable of interest since it is the output that we want to predict or model based on the other factors
 
-
 # Step 3 Result
+
 Which variable is the main variable?
 
 Price
 
 What is the range of this variable?
+
 ```{r}
 range(ames$`Sale Price`, na.rm = TRUE)
-sum(ames$`Sale Price` == 0)
 ```
 
 Draw a histogram for a numeric variable or a bar chart, if the variable is categorical.
@@ -104,16 +103,18 @@ Is there anything odd?
 
 High concentration near 0 because many of the houses haven't been sold.
 
+```{r}
+sum(ames$`Sale Price` == 0)
+```
+
 # Step 4 Result
 
 Alexander:
 
-"Bedrooms" is my variable of choice as I believe the number of bedrooms will directly influence the final sale price of the house. "Bedrooms" has a range of 10 bedrooms between 0 and 10 with an interquartile range of 1 between 3 and 4 bedrooms. 
+"Bedrooms" is my variable of choice as I believe the number of bedrooms will directly influence the final sale price of the house. "Bedrooms" has a range of 10 bedrooms between 0 and 10 with an interquartile range of 1 between 3 and 4 bedrooms.
 
 ```{r}
 ames |>
   ggplot(aes(x = Bedrooms)) +
   geom_histogram(bins = 10)
 ```
-
-

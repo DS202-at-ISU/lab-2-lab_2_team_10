@@ -27,7 +27,7 @@ library(tidyverse)
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+    ## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
     ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
     ## ✔ purrr     1.1.0     
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -226,7 +226,7 @@ is categorical.
   labs(x = "Sales Price", y = "Count", title="Count of Houses by Price")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
 ames |>
@@ -236,7 +236,7 @@ ames |>
   labs(x = "Sales Price (log)", y = "Count", title="Count of Houses by Price (log scale)")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
 
 What is the general pattern?
 
@@ -264,4 +264,4 @@ ames |>
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
