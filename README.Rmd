@@ -20,6 +20,12 @@ Submit a link to your repository on Canvas (only one submission per team) to sig
 
 # Step 1 Result
 
+```{r}
+library(classdata)
+library(tidyverse)
+
+```
+
 # Step 2 Result
 
 # Step 3 Result
