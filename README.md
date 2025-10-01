@@ -199,6 +199,53 @@ predict or model based on the other factors
 
 # Step 3 Result
 
+Which variable is the main variable?
+
+Price
+
+What is the range of this variable?
+
+``` r
+range(ames$`Sale Price`, na.rm = TRUE)
+```
+
+    ## [1]        0 20500000
+
+Draw a histogram for a numeric variable or a bar chart, if the variable
+is categorical.
+
+``` r
+  ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(bins = 50, fill = "skyblue", color = "black") +
+  labs(x = "Sales Price", y = "Count", title="Count of Houses by Price")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+``` r
+ames |>
+  filter(`Sale Price` != 0) |>
+  ggplot(aes(x = log(`Sale Price`))) +
+  geom_histogram(bins = 50, fill = "skyblue", color = "black") +
+  labs(x = "Sales Price (log)", y = "Count", title="Count of Houses by Price (log scale)")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
+
+What is the general pattern?
+
+Extremely right skewed.
+
+Is there anything odd?
+
+High concentration near 0 because many of the houses haven’t been sold.
+
+``` r
+sum(ames$`Sale Price` == 0)
+```
+
+    ## [1] 2206
+
 # Step 4 Result
 
 Alexander:
@@ -217,7 +264,7 @@ ames |>
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/Bedrooms%20Histogram-1.png)<!-- -->
 
 ``` r
 ames |>
@@ -231,11 +278,12 @@ ames |>
     ## Warning: Removed 1 row containing missing values or values outside the scale range
     ## (`geom_bar()`).
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> This bar
-chart shows how for each number of bedrooms what the average price of
-the house is. Houses with only 1 bedroom seem to have a significantly
+![](README_files/figure-gfm/Price%20by%20Bedrooms-1.png)<!-- --> This
+bar chart shows how for each number of bedrooms what the average price
+of the house is. Houses with only 1 bedroom seem to have a significantly
 higher house price. One would assume that as the number of bedrooms
 increase the price of the house will increase, however this is not the
 case. It may be important to look at total square footage to get a more
 accurate look into how price is affected. I also filtered out houses
-that did not sale and the result was still the same.
+that did not sell and the result was still the same. =======
+\>\>\>\>\>\>\> 4c40b7a202ef77252e172c54145199ab32b043ff
