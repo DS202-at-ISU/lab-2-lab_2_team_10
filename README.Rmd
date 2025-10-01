@@ -25,12 +25,15 @@ library(classdata)
 library(tidyverse)
 head(ames)
 ```
+
 ```{r}
 str(ames)
 ```
+
 ```{r}
 summary(ames)
 ```
+
 ```{r}
 ?ames
 ```
@@ -72,3 +75,15 @@ Price is the variable of interest since it is the output that we want to predict
 # Step 3 Result
 
 # Step 4 Result
+
+Alexander:
+
+"Bedrooms" is my variable of choice as I believe the number of bedrooms will directly influence the final sale price of the house. "Bedrooms" has a range of 10 bedrooms between 0 and 10 with an interquartile range of 1 between 3 and 4 bedrooms. 
+
+```{r}
+ames |>
+  ggplot(aes(x = Bedrooms)) +
+  geom_histogram(bins = 10)
+```
+
+

@@ -27,7 +27,7 @@ library(tidyverse)
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+    ## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
     ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
     ## ✔ purrr     1.1.0     
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -200,3 +200,21 @@ predict or model based on the other factors
 # Step 3 Result
 
 # Step 4 Result
+
+Alexander:
+
+“Bedrooms” is my variable of choice as I believe the number of bedrooms
+will directly influence the final sale price of the house. “Bedrooms”
+has a range of 10 bedrooms between 0 and 10 with an interquartile range
+of 1 between 3 and 4 bedrooms.
+
+``` r
+ames |>
+  ggplot(aes(x = Bedrooms)) +
+  geom_histogram(bins = 10)
+```
+
+    ## Warning: Removed 447 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
