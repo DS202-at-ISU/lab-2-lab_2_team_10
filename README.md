@@ -127,4 +127,51 @@ predict or model based on the other factors
 
 # Step 3 Result
 
+Which variable is the main variable?
+
+Price
+
+What is the range of this variable?
+
+``` r
+range(ames$`Sale Price`, na.rm = TRUE)
+```
+
+    ## [1]        0 20500000
+
+``` r
+sum(ames$`Sale Price` == 0)
+```
+
+    ## [1] 2206
+
+Draw a histogram for a numeric variable or a bar chart, if the variable
+is categorical.
+
+``` r
+  ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(bins = 50, fill = "skyblue", color = "black") +
+  labs(x = "Sales Price", y = "Count", title="Count of Houses by Price")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+ames |>
+  filter(`Sale Price` != 0) |>
+  ggplot(aes(x = log(`Sale Price`))) +
+  geom_histogram(bins = 50, fill = "skyblue", color = "black") +
+  labs(x = "Sales Price (log)", y = "Count", title="Count of Houses by Price (log scale)")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
+
+What is the general pattern?
+
+Extremely right skewed.
+
+Is there anything odd?
+
+High concentration near 0 because many of the houses haven’t been sold.
+
 # Step 4 Result

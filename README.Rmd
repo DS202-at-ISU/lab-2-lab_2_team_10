@@ -38,5 +38,35 @@ Price is the variable of interest since it is the output that we want to predict
 
 
 # Step 3 Result
+Which variable is the main variable?
+
+Price
+
+What is the range of this variable?
+```{r}
+range(ames$`Sale Price`, na.rm = TRUE)
+sum(ames$`Sale Price` == 0)
+```
+
+Draw a histogram for a numeric variable or a bar chart, if the variable is categorical.
+
+```{r}
+  ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(bins = 50, fill = "skyblue", color = "black") +
+  labs(x = "Sales Price", y = "Count", title="Count of Houses by Price")
+ames |>
+  filter(`Sale Price` != 0) |>
+  ggplot(aes(x = log(`Sale Price`))) +
+  geom_histogram(bins = 50, fill = "skyblue", color = "black") +
+  labs(x = "Sales Price (log)", y = "Count", title="Count of Houses by Price (log scale)")
+```
+
+What is the general pattern?
+
+Extremely right skewed.
+
+Is there anything odd?
+
+High concentration near 0 because many of the houses haven't been sold.
 
 # Step 4 Result
