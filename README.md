@@ -250,6 +250,10 @@ sum(ames$`Sale Price` == 0)
 
 Henry:
 
+The variable I chose was Total Living Area, since when filtering out
+Condominiums and 1 Story Frames and unsold properties, it correlated
+pretty tightly with price.
+
 ``` r
 ames |>
   filter(`Sale Price` != 0, Style != "1 Story Frame", Occupancy != "Condominium") |>
