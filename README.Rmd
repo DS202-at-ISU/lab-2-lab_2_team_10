@@ -109,6 +109,18 @@ sum(ames$`Sale Price` == 0)
 
 # Step 4 Result
 
+Henry:
+
+The variable I chose was Total Living Area, since when filtering out Condominiums and 1 Story Frames and unsold properties, it correlated pretty tightly with price.
+
+
+```{r}
+ames |>
+  filter(`Sale Price` != 0, Style != "1 Story Frame", Occupancy != "Condominium") |>
+  ggplot(aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4)
+```
+
 Alexander:
 
 "Bedrooms" is my variable of choice as I believe the number of bedrooms will directly influence the final sale price of the house. "Bedrooms" has a range of 10 bedrooms between 0 and 10 with an interquartile range of 1 between 3 and 4 bedrooms.

@@ -248,6 +248,21 @@ sum(ames$`Sale Price` == 0)
 
 # Step 4 Result
 
+Henry:
+
+The variable I chose was Total Living Area, since when filtering out
+Condominiums and 1 Story Frames and unsold properties, it correlated
+pretty tightly with price.
+
+``` r
+ames |>
+  filter(`Sale Price` != 0, Style != "1 Story Frame", Occupancy != "Condominium") |>
+  ggplot(aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
 Alexander:
 
 “Bedrooms” is my variable of choice as I believe the number of bedrooms
@@ -264,6 +279,7 @@ ames |>
     ## Warning: Removed 447 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
+<<<<<<< HEAD
 ![](README_files/figure-gfm/Bedrooms%20Histogram-1.png)<!-- -->
 
 ``` r
@@ -287,3 +303,6 @@ case. It may be important to look at total square footage to get a more
 accurate look into how price is affected. I also filtered out houses
 that did not sell and the result was still the same. =======
 \>\>\>\>\>\>\> 4c40b7a202ef77252e172c54145199ab32b043ff
+=======
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+>>>>>>> 1c4751759fab998f19fa5e326556df1feef4431f
