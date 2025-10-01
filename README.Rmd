@@ -28,6 +28,9 @@ head(ames)
 ```{r}
 str(ames)
 ```
+```{r}
+summary(ames)
+```
 
 
 # Step 2 Result
